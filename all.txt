@@ -1,0 +1,206 @@
+Page info
+
+export default {
+  name: 'pageInfo',
+  title: 'PageInfo',
+  type: 'document',
+  fields: [
+    {
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+    },
+    {
+      name: 'role',
+      title: 'Role',
+      type: 'string',
+    },
+    {
+      name: 'heroImage',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'backgroundInformation',
+      title: 'BackgroundInformation',
+      type: 'string',
+    },
+    {
+      name: 'profilePic',
+      title: 'ProfilePic',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'phoneNumber',
+      title: 'PhoneNumber',
+      type: 'string',
+    },
+    {
+      name: 'email',
+      title: 'Email',
+      type: 'string',
+    },
+    {
+      name: 'address',
+      title: 'Address',
+      type: 'string',
+    },
+    {
+      name: 'socials',
+      title: 'Socials',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'social'}}],
+    },
+  ],
+}
+
+
+
+socials
+export default {
+  name: 'social',
+  title: 'Social',
+  type: 'document',
+  fields: [
+    {
+      name: 'title',
+      title: 'Title',
+      description: 'platform of social media',
+      type: 'string',
+    },
+    {
+      name: 'url',
+      title: 'Url',
+      type: 'url',
+    },
+  ],
+}
+
+
+skills
+export default {
+  name: 'skill',
+  title: 'Skill',
+  type: 'document',
+  fields: [
+    {
+      name: 'title',
+      title: 'Title',
+      description: 'title of the skill',
+      type: 'string',
+    },
+    {
+      name: 'progress',
+      title: 'Progress',
+      type: 'number',
+      description: 'Progress of skill from 0 to 100',
+      validation: (Rule) => Rule.min(0).max(100),
+    },
+    {
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+  ],
+}
+
+
+
+projects
+
+
+export default {
+  name: 'projects',
+  title: 'Projects',
+  type: 'document',
+  fields: [
+    {
+      name: 'projectTitle',
+      title: 'ProjectTitle',
+      type: 'string',
+    },
+    {
+      name: 'tech',
+      title: 'Tech',
+      type: 'string',
+    },
+    {
+      name: 'projectImage',
+      title: 'ProjectImage',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'company',
+      title: 'Company',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'dateStarted',
+      title: 'DateStarted',
+      type: 'date',
+    },
+    {
+      name: 'dateEnded',
+      title: 'DateEnded',
+      type: 'date',
+    },
+    {
+      name: 'phoneNumber',
+      title: 'PhoneNumber',
+      type: 'string',
+    },
+    {
+      name: 'isCurrentlyWorking',
+      title: 'IsCurrentlyWorking',
+      type: 'boolean',
+    },
+    {
+      name: 'techDetails',
+      title: 'TechDetails',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'skills'}}],
+    },
+    {
+      name: 'points',
+      title: 'Points',
+      type: 'array',
+      of: [{type: 'string'}],
+    },
+    {
+      name: 'linkToBuild',
+      title: 'LinkToBuild',
+      type: 'url',
+    },
+  ],
+}
+
+
+import createSchema from 'part:@sanity/base/schema-creator'
+import schemaTypes from 'all:part:@sanity/base/schema-type'
+
+import pageInfo from './pageInfo'
+import projects from './projects'
+import skill from './skill'
+import socials from './socials'
+
+export default createSchema({
+  name: 'default',
+  types: schemaTypes.concat([pageInfo, skill, projects, socials]),
+})
+
+/Users/chetanharman/Desktop/CODING SUCKS/Portfolio/anime-portfolio/sanity

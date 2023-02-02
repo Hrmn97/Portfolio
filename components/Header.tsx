@@ -34,8 +34,8 @@ export default function Header({}: Props) {
         
         <Link href="#main" className=' hover:underline md:my-0 my-7 mx-4 text-xl text-gray-500'>Home</Link>
         <Link href="#about" className=' hover:underline md:my-0 my-7 mx-4 text-xl text-gray-500'>About</Link>
-        <Link href="#experience" className=' hover:underline md:my-0 my-7 mx-4 text-xl text-gray-500'>Experience</Link>
-        <Link href="#Contact" className=' hover:underline md:my-0 my-7 mx-4 text-xl text-gray-500'>Contact</Link>
+        <Link href="#projects" className=' hover:underline md:my-0 my-7 mx-4 text-xl text-gray-500'>Projects</Link>
+        <Link href="#contact" className=' hover:underline md:my-0 my-7 mx-4 text-xl text-gray-500'>Contact</Link>
         </motion.div>
     </header>
   )

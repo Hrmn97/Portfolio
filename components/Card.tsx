@@ -7,7 +7,7 @@ type Props = {}
 
 function Card({}: Props) {
   return (
-    <article className='flex flex-col mt-40 rounded-lg items-center space-y-7 flex-shrink-0 w-[550px] h-[650px] md:w-[350px] xl:w-[650px] snap-center bg-slate-400 p-10  transition-opacity duration-200 overflow-scroll'>
+    <article className='flex flex-col mt-40 rounded-lg items-center space-y-7 flex-shrink-0 w-[550px] h-[650px] md:w-[350px] xl:w-[650px] snap-center bg-slate-300 p-10  transition-opacity duration-200 overflow-scroll'>
         <motion.img 
         initial={{
             y:-100,
@@ -31,7 +31,7 @@ function Card({}: Props) {
                 <Image src="/node.png" alt="tech" height={100} width={100} className='h-10 w-10 rounded-full ' />
                 <Image src="/npm.png" alt="tech" height={100} width={100} className='h-10 w-10 rounded-full ' />
             </div>
-            <p className='uppercase py-5 text-gray-300'>Started work ..... -Ended ......</p>
+            <p className='uppercase py-5 text-gray-600'>Started work ..... -Ended ......</p>
             <ul className='list-disc space-y-4 ml-5 text-lg'>
                 <li>Points</li>
                 <li>Points</li>
