@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import { SocialIcon } from 'react-social-icons';
 import { motion } from "framer-motion"
 import Link from 'next/link';
+import { Social } from '@/typings';
 
-type Props = {}
+type Props = {
+    socials: Social[]
+}
 
-export default function Header({}: Props) {
+export default function Header({socials}: Props) {
     const [open,setOpen] = useState(false)
 
    
@@ -24,6 +27,7 @@ export default function Header({}: Props) {
         }}
         className="icons flex flex-row items-center gap-1">
         <h1 className='text-2xl font-mono bg-clip-text text-transparent bg-gradient-to-r from-black to-white '>DEV HRMN.in</h1>
+        
         </motion.div>
         <div onClick={()=>{setOpen(!open)}} className="absolute right-8 top-6 md:hidden cursor-pointer mb-6">
             <SocialIcon network={open ? 'vsco' : ''} />

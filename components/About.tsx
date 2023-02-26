@@ -1,9 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { PageInfo } from '@/typings';
+import { urlFor } from '@/sanity';
 
-type Props = {}
+type Props = {
+    pageInfo: PageInfo;
+}
 
-const About = (props: Props) => {
+const About = ({pageInfo}: Props) => {
   return (
     <motion.div 
     initial={{
@@ -30,10 +34,10 @@ const About = (props: Props) => {
             opacity:1
         }}
         className="-mb-20 max-[766px]:mt-6 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[500px]"
-        src="/my.jpg" alt="image" />
+        src={urlFor(pageInfo?.profilePic).url()} alt="image" />
         <div className='space-y-10 px-0 md:px-10'>
             <h4 className='text-4xl font-semibold '>My <span className='underline decoration-blue-500'>story</span></h4>
-            <p className='text-base'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industries standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p className='text-base'>{pageInfo?.backgroundInformation}</p>
         </div>
     </motion.div>
   )

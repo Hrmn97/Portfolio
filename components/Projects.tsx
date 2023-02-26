@@ -1,10 +1,15 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Card from './Card'
+import { Project } from '@/typings'
 
-type Props = {}
 
-const Projects = (props: Props) => {
+
+type Props = {
+  projects: Project[]
+}
+
+const Projects = ({projects}: Props) => {
   return (
     <motion.div
         initial={{opacity:0}}
@@ -16,11 +21,9 @@ const Projects = (props: Props) => {
         <h3 className='absolute top-24 tracking-[20px] bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-black text-2xl uppercase'>Projects</h3>
 
         <div className='w-full flex space-x-5 overflow-x-scroll p-10 snap-mandatory'>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+          {projects?.map(project =>(
+            <Card key={project._id} project={project}/>
+          ))}
         </div>
     </motion.div>
   )

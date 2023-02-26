@@ -1,6 +1,6 @@
 export default {
-  name: 'skill',
-  title: 'Skill',
+  name: 'skills',
+  title: 'Skills',
   type: 'document',
   fields: [
     {
@@ -14,7 +14,7 @@ export default {
       title: 'Progress',
       type: 'number',
       description: 'Progress of skill from 0 to 100',
-      validation: (Rule) => Rule.min(0).max(100),
+      validation: (Rule: { min: (arg0: number) => { (): any; new(): any; max: { (arg0: number): any; new(): any; }; }; }) => Rule.min(0).max(100),
     },
     {
       name: 'image',
